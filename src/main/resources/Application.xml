@@ -6,8 +6,6 @@
        default-init-method="initObject"
        default-destroy-method="destroyObject">
 
-    <context:annotation-config/>
-
-    <context:component-scan base-package="com.cherevko.dmytro"/>
+       <context:component-scan base-package="com.cherevko.dmytro"/>
 
 </beans>
