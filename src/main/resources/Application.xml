@@ -12,7 +12,5 @@
     <import resource="sony_context.xml"/>
 
     <bean id="t1000" class="com.cherevko.dmytro.impls.robot.ModelT1000" scope="prototype"/>
-    <bean id="t5000" class="com.cherevko.dmytro.impls.robot.ModelT5000" scope="prototype"/>
-
 
 </beans>
