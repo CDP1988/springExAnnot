@@ -5,25 +5,38 @@ import com.cherevko.dmytro.interfaces.Head;
 import com.cherevko.dmytro.interfaces.Leg;
 import com.cherevko.dmytro.interfaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
+@Configuration
 public class ModelT1000 implements Robot {
 
     @Autowired
-    @Qualifier("sonyHand")
     private Hand hand;
 
     @Autowired
-    @Qualifier("sonyLeg")
     private Leg leg;
 
     @Autowired
-    @Qualifier("toshibaHead")
     private Head head;
 
     private String color;
     private int year;
     private boolean soundEnable;
+
+    @Bean
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public ModelT1000 model1() {
+        return new ModelT1000();
+    }
+
+    @Bean
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public ModelT1000 model2() {
+        return new ModelT1000("grey", 2012, true);
+    }
 
     public ModelT1000() {
     }

@@ -10,7 +10,10 @@ public class Main {
 
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("Application.xml");
 
-		ModelT1000 t1000 = (ModelT1000) applicationContext.getBean("t1000");
+		ModelT1000 t1000 = (ModelT1000) applicationContext.getBean("model1");
         t1000.action();
+
+        ModelT1000 t2000 = (ModelT1000) applicationContext.getBean("model2");
+        t2000.action();
     }
 }
